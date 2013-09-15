@@ -4,9 +4,9 @@ GLOBAL start
 
 SECTION .grub_sig
 signature:
- 	MAGIC equ 0x1BADB002
-    FLAGS equ 0
-    dd MAGIC, FLAGS, -(MAGIC+FLAGS)
+	MAGIC equ 0x1BADB002
+	FLAGS equ 0
+	dd MAGIC, FLAGS, -(MAGIC+FLAGS)
 
 SECTION .text
 start:
