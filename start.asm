@@ -10,10 +10,10 @@ signature:
 
 SECTION .text
 start:
-    mov esp, _sys_stack     ; End of stack area
-    call main
-    jmp $                   ; Infinite loop
+	mov esp, _sys_stack     ; End of stack area
+	call main
+	jmp $                   ; Infinite loop
 
 SECTION .bss
-    resb 16384              ; reserve 16384 bytes for stack
+	resb 16384              ; reserve 16384 bytes for stack
 _sys_stack:                 ; end of stack
