@@ -1,4 +1,5 @@
 MyOS
 ====
 
-Run `./run.sh` to compile and run the system under QEMU
+- `make` to compile
+- `make run` to run under QEMU

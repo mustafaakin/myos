@@ -4,6 +4,10 @@ LD = ld
 
 CFLAGS= -Wall -nostdlib -ffreestanding -fno-stack-protector -O0 -fomit-frame-pointer -m32
 
+OBJS = \
+	start.o\
+	main.o\
+
 all: link
 
 compile: main.c
@@ -13,7 +17,7 @@ assemble: start.asm
 	nasm -f elf start.asm -o start.o
 
 link: compile assemble linker.ld
-	$(LD) -T linker.ld -nostdlib -n -melf_i386 start.o main.o -o kernel
+	$(LD) -T linker.ld -nostdlib -n -melf_i386 $(OBJS) -o kernel
 
 run: kernel
 	qemu -m 32m -kernel kernel
