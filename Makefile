@@ -19,7 +19,7 @@ assemble: start.asm
 link: compile assemble linker.ld
 	$(LD) -T linker.ld -nostdlib -n -melf_i386 $(OBJS) -o kernel
 
-run: kernel
+run: all
 	qemu -m 32m -kernel kernel
 
 clean:	
