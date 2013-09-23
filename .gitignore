@@ -2,3 +2,4 @@
 kernel
 *.o
 *.img
+*.swp

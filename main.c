@@ -27,11 +27,18 @@ void welcome(){
 }
 
 void printNo(int place, int a){		
+	puts(place, "Memory:");
+	puts(place + 18, "bytes");
+	int count = 0;	
 	while(a > 0){
 		char c = (char)(a % 10) + 48;
-		putc(place + 12, c);
+		putc(place + 16, c);
 		place--;
 		a = a / 10;
+		count--;		
+		if ( count % 3 == 0){
+			place--;
+		}
 	}
 }
 
@@ -39,7 +46,7 @@ int main (void)
 {
 	welcome();
 
-	int* i;
+	int *i;
 	for(i = 0x01000000; i < 0xFFFFFFFF ; i++){
 		printNo(80*5, (int) i);	
 		*i = 0x0BAD0DAD;
